@@ -42,6 +42,8 @@ ext_options = {
     'source_tmpl': name_tmpl,
 }
 
+versionsuffix=test
+
 
 # !! order of packages is important !!
 # packages updated on January 21st 2016
