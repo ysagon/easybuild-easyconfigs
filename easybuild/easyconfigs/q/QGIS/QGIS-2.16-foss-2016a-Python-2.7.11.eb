@@ -1,0 +1,38 @@
+easyblock = 'CMakeMake'
+
+name = 'QGIS'
+version = '2.14.6'
+
+homepage = 'https://www.qgis.org'
+description = """QGIS is a Free and Open Source Geographic Information System"""
+
+toolchain = {'name': 'foss', 'version': '2016a'}
+
+source_urls = ['http://qgis.org/downloads/']
+sources = ['%(namelower)s-latest-ltr.tar.bz2']
+
+versionsuffix = '-Python-%(pyver)s'
+
+builddependencies = [
+  ('CMake', '3.5.2'),
+  ('flex', '2.6.0'),
+  ('Bison', '3.0.4'),
+  ('Qt', '4.8.7'),
+  ('QCA', '2.1.0'),
+  ('PROJ', '4.9.2'),
+  ('SQLite', '3.10.0'),
+  ('expat', '2.1.0'),
+  ('Qwt', '6.1.2'),
+  ('libspatialite', '4.3.0a'),
+  ('libspatialindex', '1.8.5')
+]
+
+dependencies = [
+  ('GEOS', '3.5.0',versionsuffix),
+  ('SIP', '4.18,versionsuffix'),
+  ('PyQt','4.11.4',versionsuffix)
+]
+
+parallel = 1
+
+moduleclass = 'geo'
