@@ -19,18 +19,20 @@ builddependencies = [
   ('Bison', '3.0.4'),
   ('Qt', '4.8.7'),
   ('QCA', '2.1.0'),
-  ('PROJ', '4.9.2'),
   ('SQLite', '3.10.0'),
   ('expat', '2.1.0'),
-  ('Qwt', '6.1.2'),
-  ('libspatialite', '4.3.0a'),
-  ('libspatialindex', '1.8.5')
 ]
 
 dependencies = [
+  ('GDAL','2.1.1'),
+  ('PROJ', '4.9.2'),
+  ('Qwt', '6.1.2'),
+  ('Python', '2.7.11'),
   ('GEOS', '3.5.0',versionsuffix),
-  ('SIP', '4.18,versionsuffix'),
-  ('PyQt','4.11.4',versionsuffix)
+  ('SIP', '4.18',versionsuffix),
+  ('PyQt','4.11.4',versionsuffix),
+  ('libspatialindex', '1.8.5'),
+  ('libspatialite', '4.3.0a')
 ]
 
 parallel = 1
