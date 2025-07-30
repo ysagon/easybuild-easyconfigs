@@ -11,19 +11,10 @@ toolchain = {'name': 'foss', 'version': '2022a'}
 
 source_urls = ['https://www.geopsy.org/download/archives/']
 sources = ['geopsypack-src-%(version)s.tar.gz']
-patches = [
-    'geopsy-3.4.2-arraycore-configure-blas.patch',
-    'geopsy-3.4.2-qgpcoremath-configure-blas.patch',
-    'geopsy-3.4.2-qgpcoretools-configure-blas.patch'
-]
+patches = ['geopsy-3.4.2-replace_hardcoded_blas.patch']
 checksums = [
     {'geopsypack-src-3.4.2.tar.gz': '5e0114fe32fe01cb9d46713a201462a8c284c43d9dd6c60afaca23f6d76b621f'},
-    {'geopsy-3.4.2-arraycore-configure-blas.patch':
-     'e213e521107d0005c4743d3023625293f734730f71404363bc9f73d2974be6a5'},
-    {'geopsy-3.4.2-qgpcoremath-configure-blas.patch':
-     'a2d761e165d22aaf20d01c727beb34646d7cf0120ea51f52499245621ab086aa'},
-    {'geopsy-3.4.2-qgpcoretools-configure-blas.patch':
-     'f94e4bc2516b2b051c486cd3d21a0d074b6eb8c333333d9e921f45f37d56374d'},
+    {'geopsy-3.4.2-replace_hardcoded_blas.patch': '8bcdf026253034a6898bf4d9e04c5acda320bf28b5a3343a2c44e8a8af4d9fb3'},
 ]
 
 dependencies = [
