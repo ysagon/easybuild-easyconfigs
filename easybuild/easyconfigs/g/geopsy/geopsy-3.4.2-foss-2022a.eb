@@ -11,12 +11,19 @@ toolchain = {'name': 'foss', 'version': '2022a'}
 
 source_urls = ['https://www.geopsy.org/download/archives/']
 sources = ['geopsypack-src-%(version)s.tar.gz']
-patches = ['qgpcoremath-configure.patch', 'arraycore-configure.patch', 'qgpcoretools-configure.patch']
+patches = [
+    'geopsy-3.4.2-arraycore-configure-blas.patch',
+    'geopsy-3.4.2-qgpcoremath-configure-blas.patch',
+    'geopsy-3.4.2-qgpcoretools-configure-blas.patch'
+]
 checksums = [
     {'geopsypack-src-3.4.2.tar.gz': '5e0114fe32fe01cb9d46713a201462a8c284c43d9dd6c60afaca23f6d76b621f'},
-    {'qgpcoremath-configure.patch': '530b9cb72424a678c86723f65f0ee28011dfbd5850993f8ff397c8785b37c314'},
-    {'arraycore-configure.patch': '95bcb6500410c6f150865d62542abeaf133b61ae1994d6c39162b16a3981e22c'},
-    {'qgpcoretools-configure.patch': 'fc8a20f55fc9571c1cd2ba24122b5a380095653c37e3f79933f6f0ebdbab97ec'},
+    {'geopsy-3.4.2-arraycore-configure-blas.patch':
+     'e213e521107d0005c4743d3023625293f734730f71404363bc9f73d2974be6a5'},
+    {'geopsy-3.4.2-qgpcoremath-configure-blas.patch':
+     'a2d761e165d22aaf20d01c727beb34646d7cf0120ea51f52499245621ab086aa'},
+    {'geopsy-3.4.2-qgpcoretools-configure-blas.patch':
+     'f94e4bc2516b2b051c486cd3d21a0d074b6eb8c333333d9e921f45f37d56374d'},
 ]
 
 dependencies = [
