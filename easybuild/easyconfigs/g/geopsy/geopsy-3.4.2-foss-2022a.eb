@@ -4,7 +4,7 @@ name = 'geopsy'
 version = '3.4.2'
 
 homepage = 'https://www.geopsy.org/'
-description = """Graphical environment to view, organize and process signals. Most of the geophysical file formats are 
+description = """Graphical environment to view, organize and process signals. Most of the geophysical file formats are
 automatically recognized. Geopsy features can be extended through plugin tools. A selection is available here below."""
 
 toolchain = {'name': 'foss', 'version': '2022a'}
@@ -26,6 +26,27 @@ dependencies = [
 configopts = '-accept-license'
 prefix_opt = '-prefix '
 
+local_binaries = [
+    'dinver', 'geopsy-fk', 'geopsy-spac', 'gpdc', 'gpdepths', 'gpell', 'gpgroup2phase', 'gpmaplayer', 'gpparam2model',
+    'gprandom', 'gpsh', 'gpspac', 'gpviewdcreport', 'max2curve', 'vslarray', 'figue', 'geopsy-hv', 'gpcoord',
+    'gpdcmisfit', 'gpdistance', 'gpfksimulator', 'gphistogram', 'gpmodel2param', 'gppoisson', 'gprefra', 'gpsignal',
+    'gptarget', 'gpviewmax', 'screenpicker', 'waran', 'geopsy', 'GeopsyLand', 'gpcurve', 'gpdcreport', 'gpec8',
+    'gpgridsearch', 'gplivemodel', 'gpmt', 'gpprofile', 'gpreplace', 'gpsort', 'gptime', 'gpvoronoi',
+    'spac2disp', 'warangps'
+]
+
+local_libraries = [
+    'ArrayCore', 'ArrayGui', 'DinverCore', 'DinverDCCore', 'DinverDCGui', 'DinverGui', 'GeopsyCore', 'GeopsyGui',
+    'GeopsySLink', 'GeopsySLinkGui', 'HVCore', 'HVGui', 'QGpCoreMath', 'QGpCoreStat', 'QGpCoreTools',
+    'QGpCoreWave', 'QGpGuiMath', 'QGpGuiTools', 'QGpGuiWave', 'SciFigs', 'WaranCore',
+]
+
+sanity_check_paths = {
+    'files': [f'bin/{b}' for b in local_binaries] + [f'lib/lib{l}.{SHLIB_EXT}' for l in local_libraries],
+    'dirs': ['bin',] + [f'include/{l}' for l in local_libraries] + [
+        f'share/{l}' for l in ['DinverCore', 'geopsyarray', 'GeopsyLand', 'lang']
+    ],
+}
 sanity_check_commands = ["geopsy --version"]
 
 moduleclass = 'tools'
